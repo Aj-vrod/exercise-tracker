@@ -41,6 +41,8 @@ const Exercise = mongoose.model('Exercise', exerciseSchema);
 
 // USERS' ROUTES
 app.post('/api/users', (req, res) => {
+  const newUsername = req.body.username;
+  const newUser = new User({ username: newUsername});
 
 });
 
