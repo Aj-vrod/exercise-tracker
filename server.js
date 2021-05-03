@@ -65,6 +65,12 @@ app.get('/api/users', (req, res) => {
 
 //LOGS' ROUTES
 app.post('/api/users/:_id/exercises', (req, res) => {
+  let newDate;
+  if (req.body.date !== '') {
+    newDate = req.body.date;
+  } else {
+    newDate = new Date().toISOString().substring(0, 10);
+  };
 
 })
 
