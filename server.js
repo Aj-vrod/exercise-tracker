@@ -76,7 +76,10 @@ app.post('/api/users/:_id/exercises', (req, res) => {
     duration: parseInt(req.body.duration),
     date: newDate
   })
+  const _id = req.params._id;
+  User.findByIdAndUpdate(
 
+  )
 })
 
 
