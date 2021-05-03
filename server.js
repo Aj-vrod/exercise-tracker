@@ -101,6 +101,11 @@ app.get('/api/users/:_id/logs', (req, res) => {
     let responseObject = data;
 
 
+    if (req.query.limit) {
+      responseObject.log = responseObject.log.slice(0, req.query.limit)
+    }
+
+
   })
 })
 
