@@ -103,6 +103,13 @@ app.get('/api/users/:_id/logs', (req, res) => {
     if (req.query.from || req.query.to) {
       let fromDate = new Date(0);
       let toDate = new Date();
+      if (req.query.from) {
+        fromDate = new Date(req.query.from)
+      }
+      if (req.query.to) {
+        toDate = new Date(req.query.to)
+      }
+
 
     }
     if (req.query.limit) {
