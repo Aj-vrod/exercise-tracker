@@ -43,7 +43,12 @@ const Exercise = mongoose.model('Exercise', exerciseSchema);
 app.post('/api/users', (req, res) => {
   const newUsername = req.body.username;
   const newUser = new User({ username: newUsername});
+  newUser.save((err, data) => {
+    if (err) {
+      console.error(err);
+    }
 
+  })
 });
 
 
