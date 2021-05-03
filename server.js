@@ -105,7 +105,7 @@ app.get('/api/users/:_id/logs', (req, res) => {
       responseObject.log = responseObject.log.slice(0, req.query.limit)
     }
 
-
+    responseObject = responseObject.toJSON()
     responseObject['count'] = data.log.length;
     res.json(responseObject)
   })
