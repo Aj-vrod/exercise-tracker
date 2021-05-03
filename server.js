@@ -29,6 +29,13 @@ const exerciseSchema = new Schema({
     type: String
   }
 });
+const userSchema = new Schema({
+  username: {
+    type: String,
+    required: true
+  },
+  log: [exerciseSchema]
+});
 
 
 
