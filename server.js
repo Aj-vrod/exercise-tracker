@@ -63,6 +63,11 @@ app.get('/api/users', (req, res) => {
   });
 });
 
+//LOGS' ROUTES
+app.post('/api/users/:_id/exercises', (req, res) => {
+
+})
+
 
 
 
