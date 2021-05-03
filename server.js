@@ -39,6 +39,16 @@ const userSchema = new Schema({
 const User = mongoose.model('User', userSchema);
 const Exercise = mongoose.model('Exercise', exerciseSchema);
 
+// USERS' ROUTES
+app.post('/api/users', (req, res) => {
+
+});
+
+
+
+
+
+
 
 
 const listener = app.listen(process.env.PORT || 3000, () => {
