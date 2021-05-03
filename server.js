@@ -81,9 +81,19 @@ app.post('/api/users/:_id/exercises', (req, res) => {
     _id,
     {$push : {log: newExercise}},
     { new: true }, (err, updatedUser) => {
-
+      let responseObject = {};
+      responseObject['_id'] = updatedUser.id;
+      responseObject['username'] = updatedUser.username;
+      responseObject['date'] = new Date(newExercise.date).toDateString();
+      responseObject['description'] = newExercise.description;
+      responseObject['duration'] = newExercise.duration;
+      res.json(responseObject);
     }
   )
+})
+
+app.get('/api/users/:_id/logs', (req, res) => {
+
 })
 
 
