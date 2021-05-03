@@ -98,6 +98,8 @@ app.get('/api/users/:_id/logs', (req, res) => {
     if (err) {
       console.error(err);
     }
+    let responseObject = data;
+
 
   })
 })
