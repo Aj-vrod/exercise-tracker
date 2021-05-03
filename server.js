@@ -100,7 +100,11 @@ app.get('/api/users/:_id/logs', (req, res) => {
     }
     let responseObject = data;
 
+    if (req.query.from || req.query.to) {
+      let fromDate = new Date(0);
+      let toDate = new Date();
 
+    }
     if (req.query.limit) {
       responseObject.log = responseObject.log.slice(0, req.query.limit)
     }
@@ -110,11 +114,6 @@ app.get('/api/users/:_id/logs', (req, res) => {
     res.json(responseObject)
   })
 })
-
-
-
-
-
 
 
 const listener = app.listen(process.env.PORT || 3000, () => {
