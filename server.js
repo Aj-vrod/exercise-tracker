@@ -78,7 +78,11 @@ app.post('/api/users/:_id/exercises', (req, res) => {
   })
   const _id = req.params._id;
   User.findByIdAndUpdate(
+    _id,
+    {$push : {log: newExercise}},
+    { new: true }, (err, updatedUser) => {
 
+    }
   )
 })
 
