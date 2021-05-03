@@ -71,6 +71,11 @@ app.post('/api/users/:_id/exercises', (req, res) => {
   } else {
     newDate = new Date().toISOString().substring(0, 10);
   };
+  const newExercise = new Exercise({
+    description: req.body.description,
+    duration: parseInt(req.body.duration),
+    date: newDate
+  })
 
 })
 
