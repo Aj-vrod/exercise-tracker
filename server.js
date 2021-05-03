@@ -95,6 +95,9 @@ app.post('/api/users/:_id/exercises', (req, res) => {
 app.get('/api/users/:_id/logs', (req, res) => {
   const _id = req.params._id;
   User.findById(_id, (err, data) => {
+    if (err) {
+      console.error(err);
+    }
 
   })
 })
