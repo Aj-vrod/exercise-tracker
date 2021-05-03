@@ -54,6 +54,9 @@ app.post('/api/users', (req, res) => {
   })
 });
 
+app.get('/api/users', (req, res) => {
+
+});
 
 
 
