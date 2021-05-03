@@ -110,7 +110,12 @@ app.get('/api/users/:_id/logs', (req, res) => {
         toDate = new Date(req.query.to)
       }
 
-
+      fromDate = fromDate.getTime();
+      toDate = toDate.getTime();
+      responseObject.log = responseObject.log.filter((session) => {
+        let sessionDate = new Date(session.date).getTime();
+        return sessionDate >= fromDate && sessionDate <= toDate;
+      })
     }
     if (req.query.limit) {
       responseObject.log = responseObject.log.slice(0, req.query.limit)
