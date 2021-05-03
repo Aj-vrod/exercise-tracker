@@ -36,6 +36,8 @@ const userSchema = new Schema({
   },
   log: [exerciseSchema]
 });
+const User = mongoose.model('User', userSchema);
+const Exercise = mongoose.model('Exercise', exerciseSchema);
 
 
 
