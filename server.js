@@ -55,7 +55,12 @@ app.post('/api/users', (req, res) => {
 });
 
 app.get('/api/users', (req, res) => {
-
+  User.find().exec((err, users) => {
+    if (err) {
+      console.error(err);
+    }
+    res.json(users);
+  });
 });
 
 
